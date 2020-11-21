@@ -1,6 +1,8 @@
 ***Settings***
 Library         AppiumLibrary
-Resource        variables.yaml
+#Library         AppiumExtensionLibrary
+#Resource        general_variables.robot
+Variables       variables.yaml
 
 ***Keywords***
 Launch the App

@@ -1,5 +1,5 @@
 #Android App Set up
-platformName:       Android
+platformName:     Android
 deviceName:       emulator-5554
 appPackage:       chat21.android.demo
 appActivity:      chat21.android.demo.SplashActivity      
@@ -11,7 +11,7 @@ long:             5
 
 #Test User Credentials
 testUser1:         
-    email:        appiumtest1@yopmail.com   
+    email:        appiumtest1@yopmail.com  
     password:     P@ssword1
 testUser2:         
     email:        appiumtest2@yopmail.com   

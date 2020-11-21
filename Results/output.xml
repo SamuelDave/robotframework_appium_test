@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.9.0 on win32)" generated="20201121 17:39:29.603" rpa="false">
+<suite id="s1" name="Testcases" source="C:\Automation\robotframework_appium_test\tests\testcases.robot">
+<test id="s1-t1" name="Send_Multiple_Msgs">
+<kw name="Launch the App" library="general_resources">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${deviceName}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appActivity}</arg>
+<arg>automationName=${automationName}</arg>
+</arguments>
+<status status="PASS" starttime="20201121 17:39:29.779" endtime="20201121 17:39:37.796"></status>
+</kw>
+<status status="PASS" starttime="20201121 17:39:29.779" endtime="20201121 17:39:37.797"></status>
+</kw>
+<kw name="Login User" library="general_resources">
+<arguments>
+<arg>${testUser1}[email]</arg>
+<arg>${testUser1}[password]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${short}</arg>
+</arguments>
+<msg timestamp="20201121 17:39:39.804" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201121 17:39:37.798" endtime="20201121 17:39:39.804"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${loginEmail}</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20201121 17:39:39.805" level="INFO">Typing text 'appiumtest1@yopmail.com' into text field 'id=chat21.android.demo:id/email'</msg>
+<status status="PASS" starttime="20201121 17:39:39.804" endtime="20201121 17:39:39.892"></status>
+</kw>
+<kw name="Input Password" library="AppiumLibrary">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>${loginPassword}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201121 17:39:39.893" level="INFO">Typing password into text field 'id=chat21.android.demo:id/password'</msg>
+<status status="PASS" starttime="20201121 17:39:39.892" endtime="20201121 17:39:40.421"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${loginButton}</arg>
+</arguments>
+<msg timestamp="20201121 17:39:40.423" level="INFO">Clicking element 'id=chat21.android.demo:id/login'.</msg>
+<status status="PASS" starttime="20201121 17:39:40.421" endtime="20201121 17:39:40.965"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${long}</arg>
+</arguments>
+<msg timestamp="20201121 17:39:45.977" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20201121 17:39:40.965" endtime="20201121 17:39:45.977"></status>
+</kw>
+<status status="PASS" starttime="20201121 17:39:37.797" endtime="20201121 17:39:45.978"></status>
+</kw>
+<kw name="Send Message" library="general_resources">
+<arguments>
+<arg>3</arg>
+</arguments>
+<kw name="${index} IN RANGE [ ${contactIndex} ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${short}</arg>
+</arguments>
+<msg timestamp="20201121 17:39:47.984" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201121 17:39:45.979" endtime="20201121 17:39:47.985"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${selectContact}</arg>
+</arguments>
+<msg timestamp="20201121 17:39:47.987" level="INFO">Clicking element 'id=chat21.android.demo:id/direct_message'.</msg>
+<status status="PASS" starttime="20201121 17:39:47.985" endtime="20201121 17:39:48.176"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${short}</arg>
+</arguments>
+<msg timestamp="20201121 17:39:50.178" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201121 17:39:48.176" endtime="20201121 17:39:50.178"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${contactList}${index + 2}"]</arg>
+</arguments>
+<msg timestamp="20201121 17:39:50.180" level="INFO">Clicking element '//android.widget.LinearLayout[@index="2"]'.</msg>
+<status status="PASS" starttime="20201121 17:39:50.178" endtime="20201121 17:39:50.667"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${short}</arg>
+</arguments>
+<msg timestamp="20201121 17:39:52.674" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201121 17:39:50.667" endtime="20201121 17:39:52.674"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${messageBox}</arg>
+<arg>${message}</arg>
+</arguments>
+<msg timestamp="20201121 17:39:52.676" level="INFO">Typing text 'Hello' into text field 'id=chat21.android.demo:id/main_activity_chat_bottom_message_edittext'</msg>
+<status status="PASS" starttime="20201121 17:39:52.675" endtime="20201121 17:39:52.769"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${sendButton}</arg>
+</arguments>
+<msg timestamp="20201121 17:39:52.771" level="INFO">Clicking element 'id=chat21.android.demo:id/main_activity_send'.</msg>
+<status status="PASS" starttime="20201121 17:39:52.769" endtime="20201121 17:39:53.397"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${long}</arg>
+</arguments>
+<msg timestamp="20201121 17:39:58.403" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20201121 17:39:53.397" endtime="20201121 17:39:58.403"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${msgBackButton}</arg>
+</arguments>
+<msg timestamp="20201121 17:39:58.405" level="INFO">Clicking element '//android.widget.ImageButton[@content-desc="Navigate up"]'.</msg>
+<status status="PASS" starttime="20201121 17:39:58.403" endtime="20201121 17:39:58.628"></status>
+</kw>
+<status status="PASS" starttime="20201121 17:39:45.979" endtime="20201121 17:39:58.628"></status>
+</kw>
+<kw name="${index} = 1" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${short}</arg>
+</arguments>
+<msg timestamp="20201121 17:40:00.630" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201121 17:39:58.629" endtime="20201121 17:40:00.630"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${selectContact}</arg>
+</arguments>
+<msg timestamp="20201121 17:40:00.632" level="INFO">Clicking element 'id=chat21.android.demo:id/direct_message'.</msg>
+<status status="PASS" starttime="20201121 17:40:00.630" endtime="20201121 17:40:01.169"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${short}</arg>
+</arguments>
+<msg timestamp="20201121 17:40:03.176" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201121 17:40:01.169" endtime="20201121 17:40:03.176"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${contactList}${index + 2}"]</arg>
+</arguments>
+<msg timestamp="20201121 17:40:03.178" level="INFO">Clicking element '//android.widget.LinearLayout[@index="3"]'.</msg>
+<status status="PASS" starttime="20201121 17:40:03.176" endtime="20201121 17:40:03.474"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${short}</arg>
+</arguments>
+<msg timestamp="20201121 17:40:05.483" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201121 17:40:03.474" endtime="20201121 17:40:05.483"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${messageBox}</arg>
+<arg>${message}</arg>
+</arguments>
+<msg timestamp="20201121 17:40:05.484" level="INFO">Typing text 'Hello' into text field 'id=chat21.android.demo:id/main_activity_chat_bottom_message_edittext'</msg>
+<status status="PASS" starttime="20201121 17:40:05.483" endtime="20201121 17:40:05.591"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${sendButton}</arg>
+</arguments>
+<msg timestamp="20201121 17:40:05.593" level="INFO">Clicking element 'id=chat21.android.demo:id/main_activity_send'.</msg>
+<status status="PASS" starttime="20201121 17:40:05.592" endtime="20201121 17:40:06.224"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${long}</arg>
+</arguments>
+<msg timestamp="20201121 17:40:11.235" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20201121 17:40:06.224" endtime="20201121 17:40:11.235"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${msgBackButton}</arg>
+</arguments>
+<msg timestamp="20201121 17:40:11.237" level="INFO">Clicking element '//android.widget.ImageButton[@content-desc="Navigate up"]'.</msg>
+<status status="PASS" starttime="20201121 17:40:11.235" endtime="20201121 17:40:11.350"></status>
+</kw>
+<status status="PASS" starttime="20201121 17:39:58.629" endtime="20201121 17:40:11.350"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${short}</arg>
+</arguments>
+<msg timestamp="20201121 17:40:13.351" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201121 17:40:11.350" endtime="20201121 17:40:13.351"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${selectContact}</arg>
+</arguments>
+<msg timestamp="20201121 17:40:13.353" level="INFO">Clicking element 'id=chat21.android.demo:id/direct_message'.</msg>
+<status status="PASS" starttime="20201121 17:40:13.351" endtime="20201121 17:40:13.429"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${short}</arg>
+</arguments>
+<msg timestamp="20201121 17:40:15.435" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201121 17:40:13.429" endtime="20201121 17:40:15.435"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${contactList}${index + 2}"]</arg>
+</arguments>
+<msg timestamp="20201121 17:40:15.437" level="INFO">Clicking element '//android.widget.LinearLayout[@index="4"]'.</msg>
+<status status="PASS" starttime="20201121 17:40:15.435" endtime="20201121 17:40:16.011"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${short}</arg>
+</arguments>
+<msg timestamp="20201121 17:40:18.013" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201121 17:40:16.011" endtime="20201121 17:40:18.014"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${messageBox}</arg>
+<arg>${message}</arg>
+</arguments>
+<msg timestamp="20201121 17:40:18.016" level="INFO">Typing text 'Hello' into text field 'id=chat21.android.demo:id/main_activity_chat_bottom_message_edittext'</msg>
+<status status="PASS" starttime="20201121 17:40:18.014" endtime="20201121 17:40:18.144"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${sendButton}</arg>
+</arguments>
+<msg timestamp="20201121 17:40:18.146" level="INFO">Clicking element 'id=chat21.android.demo:id/main_activity_send'.</msg>
+<status status="PASS" starttime="20201121 17:40:18.144" endtime="20201121 17:40:18.788"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${long}</arg>
+</arguments>
+<msg timestamp="20201121 17:40:23.797" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20201121 17:40:18.789" endtime="20201121 17:40:23.797"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${msgBackButton}</arg>
+</arguments>
+<msg timestamp="20201121 17:40:23.799" level="INFO">Clicking element '//android.widget.ImageButton[@content-desc="Navigate up"]'.</msg>
+<status status="PASS" starttime="20201121 17:40:23.797" endtime="20201121 17:40:23.935"></status>
+</kw>
+<status status="PASS" starttime="20201121 17:40:11.350" endtime="20201121 17:40:23.935"></status>
+</kw>
+<status status="PASS" starttime="20201121 17:39:45.979" endtime="20201121 17:40:23.935"></status>
+</kw>
+<status status="PASS" starttime="20201121 17:39:45.978" endtime="20201121 17:40:23.936"></status>
+</kw>
+<status status="PASS" starttime="20201121 17:39:29.778" endtime="20201121 17:40:23.937" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20201121 17:39:29.604" endtime="20201121 17:40:23.938"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Testcases">Testcases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

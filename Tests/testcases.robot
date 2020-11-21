@@ -1,9 +1,11 @@
 ***Settings***
-Library        AppiumLibrary
-#Library        AppiumExtensionLibrary
+#Library        AppiumLibrary
+Library        AppiumExtensionLibrary
 Resource       ../Resources/general_resources.robot
 
 ***Test Cases***
+#To exxecute a specific test case, please run this command in the terminal robot -d ../Results --test Login_User testcases.robot
+#To execute all the test cases, please run this command in the terminal robot -d ../Results  testcases.robot
 Launch_Application
      Launch the App
 
@@ -15,7 +17,7 @@ Invalid_Login
      Launch the App
      Login User  WrongUsername          WrongPassword
 
-Lougout_User
+Logout_User
      Launch the App
      Login User  ${testUser1.email}    ${testUser1.password}
      Logout User  

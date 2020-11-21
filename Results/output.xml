@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.9.0 on win32)" generated="20201121 20:12:16.503" rpa="false">
+<robot generator="Robot 3.2.2 (Python 3.9.0 on win32)" generated="20201121 21:06:18.496" rpa="false">
 <suite id="s1" name="Testcases" source="C:\Automation\robotframework_appium_test\tests\testcases.robot">
-<test id="s1-t1" name="Send_Multiple_Msgs">
+<test id="s1-t1" name="Login_User">
 <kw name="Launch the App" library="general_resources">
-<kw name="Open Application" library="AppiumLibrary">
+<kw name="Open Application" library="AppiumExtensionLibrary">
 <doc>Opens a new application to given Appium server.
 Capabilities of appium server, Android and iOS,
 Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
@@ -18,122 +18,64 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>appActivity=${appActivity}</arg>
 <arg>automationName=${automationName}</arg>
 </arguments>
-<status status="PASS" starttime="20201121 20:12:16.753" endtime="20201121 20:12:27.224"></status>
+<status status="PASS" starttime="20201121 21:06:18.761" endtime="20201121 21:06:27.616"></status>
 </kw>
-<status status="PASS" starttime="20201121 20:12:16.753" endtime="20201121 20:12:27.224"></status>
+<status status="PASS" starttime="20201121 21:06:18.760" endtime="20201121 21:06:27.617"></status>
 </kw>
 <kw name="Login User" library="general_resources">
 <arguments>
 <arg>${testUser1.email}</arg>
 <arg>${testUser1.password}</arg>
 </arguments>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
+<kw name="Wait Until Page Contains Element" library="AppiumExtensionLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
-<arg>${short}</arg>
+<arg>${loginButton}</arg>
+<arg>timeout=${short}</arg>
 </arguments>
-<msg timestamp="20201121 20:12:29.236" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20201121 20:12:27.226" endtime="20201121 20:12:29.236"></status>
+<status status="PASS" starttime="20201121 21:06:27.620" endtime="20201121 21:06:28.536"></status>
 </kw>
-<kw name="Input Text" library="AppiumLibrary">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
+<kw name="Input Value" library="AppiumExtensionLibrary">
+<doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
 <arguments>
 <arg>${loginEmail}</arg>
 <arg>${email}</arg>
 </arguments>
-<msg timestamp="20201121 20:12:29.238" level="INFO">Typing text 'appiumtest1@yopmail.com' into text field 'id=chat21.android.demo:id/email'</msg>
-<status status="PASS" starttime="20201121 20:12:29.236" endtime="20201121 20:12:29.351"></status>
+<msg timestamp="20201121 21:06:28.537" level="INFO">Setting text 'appiumtest1@yopmail.com' into text field 'id=chat21.android.demo:id/email'</msg>
+<status status="PASS" starttime="20201121 21:06:28.536" endtime="20201121 21:06:28.610"></status>
 </kw>
-<kw name="Input Password" library="AppiumLibrary">
+<kw name="Input Password" library="AppiumExtensionLibrary">
 <doc>Types the given password into text field identified by `locator`.</doc>
 <arguments>
 <arg>${loginPassword}</arg>
 <arg>${password}</arg>
 </arguments>
-<msg timestamp="20201121 20:12:29.354" level="INFO">Typing password into text field 'id=chat21.android.demo:id/password'</msg>
-<status status="PASS" starttime="20201121 20:12:29.351" endtime="20201121 20:12:29.896"></status>
+<msg timestamp="20201121 21:06:28.611" level="INFO">Typing password into text field 'id=chat21.android.demo:id/password'</msg>
+<status status="PASS" starttime="20201121 21:06:28.610" endtime="20201121 21:06:29.146"></status>
 </kw>
-<kw name="Click Element" library="AppiumLibrary">
+<kw name="Click Element" library="AppiumExtensionLibrary">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>${loginButton}</arg>
 </arguments>
-<msg timestamp="20201121 20:12:29.898" level="INFO">Clicking element 'id=chat21.android.demo:id/login'.</msg>
-<status status="PASS" starttime="20201121 20:12:29.896" endtime="20201121 20:12:30.444"></status>
+<msg timestamp="20201121 21:06:29.147" level="INFO">Clicking element 'id=chat21.android.demo:id/login'.</msg>
+<status status="PASS" starttime="20201121 21:06:29.146" endtime="20201121 21:06:29.682"></status>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>${long}</arg>
-</arguments>
-<msg timestamp="20201121 20:12:35.449" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20201121 20:12:30.444" endtime="20201121 20:12:35.449"></status>
+<status status="PASS" starttime="20201121 21:06:27.618" endtime="20201121 21:06:29.682"></status>
 </kw>
-<status status="PASS" starttime="20201121 20:12:27.225" endtime="20201121 20:12:35.449"></status>
-</kw>
-<kw name="Send Message" library="general_resources">
-<arguments>
-<arg>3</arg>
-</arguments>
-<kw name="${index} IN RANGE [ ${contactIndex} ]" type="for">
-<kw name="${index} = 0" type="foritem">
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>${short}</arg>
-</arguments>
-<msg timestamp="20201121 20:12:37.464" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20201121 20:12:35.453" endtime="20201121 20:12:37.464"></status>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>${selectContact}</arg>
-</arguments>
-<msg timestamp="20201121 20:12:37.466" level="INFO">Clicking element 'id=chat21.android.demo:id/direct_message'.</msg>
-<status status="PASS" starttime="20201121 20:12:37.465" endtime="20201121 20:12:37.529"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>${short}</arg>
-</arguments>
-<msg timestamp="20201121 20:12:39.539" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20201121 20:12:37.529" endtime="20201121 20:12:39.539"></status>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>${contactList}${index + 2}"]</arg>
-</arguments>
-<msg timestamp="20201121 20:12:39.540" level="INFO">Clicking element '//android.widget.LinearLayout[@index="2"]'.</msg>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20201121 20:12:40.067" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20201121 20:12:39.766" endtime="20201121 20:12:40.067"></status>
-</kw>
-<msg timestamp="20201121 20:12:40.075" level="FAIL">ValueError: Element locator '//android.widget.LinearLayout[@index="2"]' did not match any elements.</msg>
-<status status="FAIL" starttime="20201121 20:12:39.539" endtime="20201121 20:12:40.075"></status>
-</kw>
-<status status="FAIL" starttime="20201121 20:12:35.452" endtime="20201121 20:12:40.075"></status>
-</kw>
-<status status="FAIL" starttime="20201121 20:12:35.452" endtime="20201121 20:12:40.075"></status>
-</kw>
-<status status="FAIL" starttime="20201121 20:12:35.450" endtime="20201121 20:12:40.076"></status>
-</kw>
-<status status="FAIL" starttime="20201121 20:12:16.752" endtime="20201121 20:12:40.077" critical="yes">ValueError: Element locator '//android.widget.LinearLayout[@index="2"]' did not match any elements.</status>
+<status status="PASS" starttime="20201121 21:06:18.760" endtime="20201121 21:06:29.683" critical="yes"></status>
 </test>
-<status status="FAIL" starttime="20201121 20:12:16.506" endtime="20201121 20:12:40.085"></status>
+<status status="PASS" starttime="20201121 21:06:18.499" endtime="20201121 21:06:29.684"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1">Critical Tests</stat>
-<stat pass="0" fail="1">All Tests</stat>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" id="s1" name="Testcases">Testcases</stat>
+<stat pass="1" fail="0" id="s1" name="Testcases">Testcases</stat>
 </suite>
 </statistics>
 <errors>

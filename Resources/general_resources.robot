@@ -1,6 +1,6 @@
 ***Settings***
-Library         AppiumLibrary
-#Library         AppiumExtensionLibrary
+#Library         AppiumLibrary
+Library         AppiumExtensionLibrary
 #Resource        general_variables.robot
 Variables       variables.yaml
 
@@ -10,34 +10,32 @@ Launch the App
 
 Login User
     [Arguments]          ${email}            ${password}          
-    Sleep                ${short}
-    Input Text           ${loginEmail}       ${email}
+    Wait Until Page Contains Element         ${loginButton}         timeout=${short}
+    Input Value          ${loginEmail}       ${email}       
     Input Password       ${loginPassword}    ${password}
     Click Element        ${loginButton}
-    Sleep                ${long}
 
 Logout User
-    Sleep                ${short}
+    Wait Until Page Contains Element         ${profileTab}          timeout=${Long}
     Click Element        ${profileTab}
-    Sleep                ${short}
+    Wait Until Page Contains Element         ${logoutButton}        timeout=${short}
     Click Element        ${logoutButton}
-    Sleep                ${short}
 
 Verify Invalid Login
-    Sleep               ${short}
-    Page Should Not Contain Element             ${homeTab}             
+    Wait Until Element Is Enabled            ${loginButton}         timeout=${short}
+    Page Should Not Contain Element          ${homeTab}             
 
 Send Message
     [Arguments]         ${contactIndex}
-    FOR     ${index}     IN RANGE        ${contactIndex}  
-        Sleep               ${short}
+    FOR     ${index}        IN RANGE         ${contactIndex}  
+        Wait Until Page Contains Element     ${selecTContact}       timeout=${Long}
         Click Element       ${selectContact}
-        Sleep               ${short}
+        Wait Until Element Is Enabled        ${contactList}0"]      timeout=${short}
         Click Element       ${contactList}${index + 2}"]
-        Sleep               ${short}
-        Input Text          ${messageBox}       ${message}
+        Wait Until Element Is Enabled        ${messageBox}          timeout=${short}
+        Input Value         ${messageBox}    ${message}
         Click Element       ${sendButton}
-        Sleep               ${long}
+        Wait Until Element Is Enabled        ${msgBackButton}       timeout=${short}
         Click Element       ${msgBackButton}
     END
 
